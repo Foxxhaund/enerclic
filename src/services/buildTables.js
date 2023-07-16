@@ -13,34 +13,6 @@ export function buildColores(included) {
         })
         return l
 }
-// export function  buildValueLabels(included,energias) {
-//     let l = []
-    
-  
-//     included.map((i) =>{
-//         if(i.type == energias){
-//         i.attributes.content.map((con) =>{
-//             l.push(con.attributes.title) 
-//             })}
-//         })
-  
-//     return l
-//}
-// export function buildTotales(included,energias) {
-//     let l = []
-    
-   
-//         included.map((i) =>{
-//             if(i.type == energias){
-//             i.attributes.content.map((con) =>{
-//                 l.push(con.attributes.total)   
-//             })}
-//         })
-    
-//     return l
-// }
-
-
 
 export function energias(included){
     let l = []
@@ -93,6 +65,31 @@ export function valoresX(included){
                 if(i.attributes.values != []){
                     i.attributes.values.map((con) =>{
                         if(con !=[]) v.push(con.value)
+                    })
+                    l.push(v)
+                    v=[]
+                }
+            }
+        })
+        if(l != []) return l
+        else return 1
+    }
+export function porcentajeX(included){
+    let l = []
+    let v = []
+        included.map((i)=>{
+            if(i.attributes.content){
+                i.attributes.content.map((con) =>{
+                    con.attributes.values.map((val) =>{
+                            v.push(val.percentage)
+                    })
+                    l.push(v)
+                    v = []
+                })
+            }else{
+                if(i.attributes.values != []){
+                    i.attributes.values.map((con) =>{
+                        if(con !=[]) v.push(con.percentage)
                     })
                     l.push(v)
                     v=[]

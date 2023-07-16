@@ -68,20 +68,19 @@ export default function Barras({labels,totales,nombres,colores}){
     return (
     <>
         
-            <Box md={6} sx={{justifyContent: "center"}}>
+            <Box md={12} sx={{justifyContent: "center"}}>
             <FormControl>
-                    <FormLabel id="buttons-group">Tipo de Gáfica</FormLabel>
-                    <RadioGroup
-                        row
-                        aria-labelledby="buttons-group"
-                        name="radio"
-                        onChange={handleChangeTipo}
-                    >
-                        <FormControlLabel value={0} control={<Radio />} label={"Barras"} />
-                        <FormControlLabel value={1} control={<Radio />} label={"Lineas"} />
-                    </RadioGroup>
-                </FormControl>
-
+                <RadioGroup
+                    row
+                    aria-labelledby="buttons-group"
+                    name="radio"
+                    onChange={handleChangeTipo}
+                    defaultValue={0}
+                >
+                    <FormControlLabel value={0} control={<Radio />} label={"Barras"} />
+                    <FormControlLabel value={1} control={<Radio />} label={"Lineas"}  />
+                </RadioGroup>
+            </FormControl>
             </Box>
         
     {
