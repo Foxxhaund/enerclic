@@ -6,6 +6,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { useOptionsContext } from "../../../context/OptionsContext"
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -16,32 +17,43 @@ import {
     Title,
     Tooltip,
     Legend,
+    Filler,
   } from 'chart.js';
 
-
-  const options = {
-    responsive:true,
-  }
-
-  ChartJS.register(CategoryScale,LinearScale,PointElement,BarElement,LineElement,Title,Tooltip,Legend)
+  ChartJS.register(CategoryScale,LinearScale,PointElement,BarElement,LineElement,Title,Tooltip,Legend,Filler)
 export default function Barras({labels,totales,nombres,colores}){
-    const [election, setElection] = useState(0)
+    const { datos } = useOptionsContext()
+    const { data } = datos
     const [tipoG, setTipoG] = useState(0)
     let datas = []
-    console.log(labels)
-    console.log(totales)
-    console.log(nombres)
-    console.log(colores)
+
+    const options = {
+        fill:false,
+        responsive:true,
+        tension: 0.3,
+        plugins:{
+            legend:{
+                display:true,
+            },
+            title: {
+                display: true,
+                text: data.type,
+              }
+        },
+      }
+
     nombres.map((n,index) =>{
         datas.push({
             label: n,
             data: totales[index],
-            backgroundColor: colores[index],
             borderColort: colores[index],
+            pointRadius: 6,
+            backgroundColor: colores[index],
+            
         })
     })
  
-    const data = useMemo(() =>{
+    const dataG = useMemo(() =>{
         return{
             datasets:datas,
             labels: labels,
@@ -73,7 +85,7 @@ export default function Barras({labels,totales,nombres,colores}){
             </Box>
         
     {
-        (tipoG == 0) ? (<Bar data={data} options={options}/>):(<Line data={data} options={options}/>)
+        (tipoG == 0) ? (<Bar data={dataG} options={options}/>):(<Line data={dataG} options={options}/>)
     }
     
     </>)

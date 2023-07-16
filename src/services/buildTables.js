@@ -62,14 +62,15 @@ export function labelsX(included){
                     
                 })
             }else{
-                i.attributes.values.map((con) =>{
-                    if(con != []){
-                        if(!l.includes(con.datetime)){
-                            l.push(con.datetime)
+                if(i.attributes.values != []){
+                    i.attributes.values.map((con) =>{
+                        if(con != []){
+                            if(!l.includes(con.datetime)){
+                                l.push(con.datetime)
+                            }
                         }
-                    }
-                })
-                
+                    })
+                }
             }
         })
         if(l != []) return l
@@ -89,11 +90,13 @@ export function valoresX(included){
                     v = []
                 })
             }else{
-                i.attributes.values.map((con) =>{
-                    if(con !=[]) v.push(con.value)
-                })
-                l.push(v)
-                v=[]
+                if(i.attributes.values != []){
+                    i.attributes.values.map((con) =>{
+                        if(con !=[]) v.push(con.value)
+                    })
+                    l.push(v)
+                    v=[]
+                }
             }
         })
         if(l != []) return l

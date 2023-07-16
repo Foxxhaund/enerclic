@@ -23,15 +23,10 @@ export default function OptionsContextProvider({ children }) {
   const [datos,setDatos] = useState(null)
   
   const URL = `https://apidatos.ree.es/${selectedWid.lang}/datos/${selectedWid.category}/${selectedWid.widget}?start_date=${initDate}&end_date=${endDate}&time_trunc=${truck}`
-  console.log(truck,"en contexto")
-  // if(selectedWid.lang != '' && selectedWid.category != '' && selectedWid.widget != '' && 
-  //     initDate != '' && endDate != '' && datos != ''){
-  //     }
-  console.log(URL)
+  
   async function getDatos(){
     const response = await fetch(URL)
     setDatos(await response.json())
-    console.log(datos, "en contexto")
   }
   
   const value = {

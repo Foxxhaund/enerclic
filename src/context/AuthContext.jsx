@@ -16,7 +16,6 @@ export default function AuthContextProvider({ children }) {
 
   async function login(e, u) {
     e.preventDefault();
-    console.log(u,"en contexto")
     const response = await fetch('https://fakestoreapi.com/auth/login', {
       method: "POST",
       body: JSON.stringify(u),
