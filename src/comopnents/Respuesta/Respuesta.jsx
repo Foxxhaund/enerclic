@@ -1,6 +1,6 @@
 import { useOptionsContext } from "../../context/OptionsContext"
 import Graficas from "../Graficas/Graficas"
-import Tabla from "../Tabla/Tabla"
+//import Tabla from "../Tabla/Tabla"
 
 export default function Respuesta(){
     const {datos} = useOptionsContext()
@@ -13,7 +13,7 @@ export default function Respuesta(){
         ):(
         <>
         <Graficas/>
-        <Tabla/>
+        {/* <Tabla/> */}
         </>)
     ))
    

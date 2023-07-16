@@ -9,18 +9,12 @@ export default function Tabla(){
     let tableData = []
     //Valores para lineas
     const LABELS = buildLabels(included) //datos para el eje x
-    console.log(LABELS,"LABELS")
     const VALUES = buildLineValues(included)//datos para el eje y
-    console.log(VALUES,"VALUES")
     const VALUE_LABELS = buildValueLabels(included)//etiquetas de lineas de grafica
-    console.log(VALUE_LABELS,"VALUE_LABELS")
     //valores para barras
     const COLORES = buildColores(included) //colores de la grafica
-    console.log(COLORES,"COLORES")
     const TOTALES = buildTotales(included) //valores totales
-    console.log(TOTALES,"TOTALES")
     const LASTUPDATE = buildDescription(included)
-    console.log(LASTUPDATE,"LASTUP")
 
     TOTALES.map((t,index)=>{
         tableData.push({
