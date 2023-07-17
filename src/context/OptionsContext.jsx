@@ -22,7 +22,7 @@ export default function OptionsContextProvider({ children }) {
   const [truck,setTruck] = useState('')
   const [datos,setDatos] = useState(null)
   
-  const URL = `https://apidatos.ree.es/${selectedWid.lang}/datos/${selectedWid.category}/${selectedWid.widget}?start_date=${initDate}&end_date=${endDate}&time_trunc=${truck}`
+  const URL = `${import.meta.env.VITE_API_URL}${selectedWid.lang}/datos/${selectedWid.category}/${selectedWid.widget}?start_date=${initDate}&end_date=${endDate}&time_trunc=${truck}`
   
   async function getDatos(){
     const response = await fetch(URL)
