@@ -21,7 +21,7 @@ import {
   } from 'chart.js';
 
   ChartJS.register(CategoryScale,LinearScale,PointElement,BarElement,LineElement,Title,Tooltip,Legend,Filler)
-export default function Barras({labels,totales,nombres,colores}){
+export default function Barras({labels,totales,nombres,colores,tipoGrafica}){
     const { datos } = useOptionsContext()
     const { data } = datos
     const [tipoG, setTipoG] = useState(0)
@@ -37,7 +37,7 @@ export default function Barras({labels,totales,nombres,colores}){
             },
             title: {
                 display: true,
-                text: data.type,
+                text: `${data.type} ${tipoGrafica}`,
               }
         },
       }

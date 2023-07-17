@@ -1,6 +1,6 @@
 
 import { useOptionsContext } from "../../context/OptionsContext"
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Barras from "./Barras/Barras";
 import { buildColores, labelsX, valoresX, nombreX, porcentajeX } from '../../services/buildTables';
 
@@ -23,14 +23,14 @@ export default function Graficas(){
     return(
     <Box>
         {(VALORES != 1) ? (
-        <Box >
-            <Box>
-                <Barras labels={LX} totales={VALORES} nombres={NOMBRES} colores={COLORES}/>
-            </Box>
-            <Box>
-                <Barras labels={LX} totales={PORCENTAJE} nombres={NOMBRES} colores={COLORES}/>
-            </Box>
-        </Box> ):(<p>No hay valores ha mostrar</p>)}
+        <Grid container >
+            <Grid item xs={12} md={6} sx={{border: 1, p:1}}>
+                <Barras labels={LX} totales={VALORES} nombres={NOMBRES} colores={COLORES} tipoGrafica={'Valores'}/>
+            </Grid>
+            <Grid item xs={12} md={6} sx={{border: 1, p:1}}>
+                <Barras labels={LX} totales={PORCENTAJE} nombres={NOMBRES} colores={COLORES} tipoGrafica={'Porcentajes'}/>
+            </Grid>
+        </Grid> ):(<p>No hay valores ha mostrar</p>)}
          
     </Box>
 

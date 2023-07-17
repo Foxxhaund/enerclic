@@ -1,5 +1,7 @@
-import {Grid,Box} from '@mui/material'
+import {Grid,Button} from '@mui/material'
 import { useAuthContext } from "../../context/AuthContext";
+
+
 
 
 export default function Layout() {
@@ -10,19 +12,16 @@ export default function Layout() {
     }
 
     return (
-       
-    <Box className="navmain">
-
-        <Grid container spacing={2} sx={{pt:2,backgroundColor:"white"}}>
-            <Grid item xs={2} sx={{ img: { width: "80%",pb:"1rem",pt:"1rem" } }} >
-                <img src="../../src/assets/logo.jpg" />
+        <Grid container spacing={2} borderBottom={2} sx={{alignItems: 'center', desplay:'flex', mt: 1,backgroundColor:"white"}}>
+            <Grid item xs={12} md={6} sx={{pt:1}}>
+                <img width={300} src="../../src/assets/logoenerclick.png"/>
 
             </Grid>
-            <Grid item xs={10} sx={{ display: "flex", alignItems: "center",justifyContent:"center" }}>
-                <button onClick={handleClick}>logout</button>   
+            <Grid item xs={12} md={6} sx={{ display: 'flex'}}>
+                <Button variant='contained' onClick={handleClick}>logout</Button>   
             </Grid>     
-        </Grid>
-    </Box>
-        
+        </Grid>        
     )
 }
+
+//sx={{ img: { width: "80%",pb:"1rem",pt:"1rem" } }}

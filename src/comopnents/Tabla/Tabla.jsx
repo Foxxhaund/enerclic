@@ -47,7 +47,6 @@ export default function Tabla(){
     
     return (
         <div style={{ height: 700, width: '100%' }}>
-            <p>dfgdfgerg</p>
             <DataGrid rows={rows} columns={cols} slots={{toolbar: CustomToolbar}} />
         </div>
         )
