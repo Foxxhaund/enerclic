@@ -7,3 +7,6 @@
 #de tiempo como ociones necesarias para obtener respuesta.
 #3.- La tabla es interactiva. Se pude ordenar, filtrar, activar y desactivar columnas y exportar a CSV.
 #4.- Logout, enviará el usuario a la página principar 
+
+
+#Como excepción se ha compartido el archivo ".emv" para facilitar la revisión de la prueba
