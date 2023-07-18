@@ -1,37 +1,49 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import logo from "../assets/logoenerclic.jpg";
 import portada from "../assets/portada.jpg";
-import ResponsiveImage from "../comopnents/ui/ResponsiveImage";
-import Login from "../comopnents/Login/Login";
-
+import Login from "../components/Login/Login";
 
 export default function Home() {
   return (
-    <Grid container sx={{ backgroundColor: "#ffffff" }}>
-      <Grid container item xs={12}>
-        <Box position="absolute" top={0} left={226} width="50%">
-          <ResponsiveImage
-            src={logo}
-            alt="enerclic"
-            sx={{ width: 500 }}
-            centered
-          />
-        </Box>
+    <Container
+      sx={{
+        maxWidth: "1600px",
+        margin: "0 auto",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          component={"img"}
+          src={logo}
+          alt="enerclic"
+          sx={{ width: 500, margin: "0 auto" }}
+        />
 
-        <Grid item md={6} display="flex" alignContent="center" height="100vh">
-          <ResponsiveImage
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+          }}
+        >
+          <Box
+            p={4}
+            component={"img"}
             src={portada}
             alt="portada enerclic"
             sx={{ width: 585, height: "auto" }}
-            centered
           />
-        </Grid>
-        <Grid item md={6}>
-          <Box p={12} mt={15}>
+
+          <Box p={4} sx={{ width: "100%" }}>
             <Login />
           </Box>
-        </Grid>
-      </Grid>
-    </Grid>
+        </Box>
+      </Box>
+    </Container>
   );
 }

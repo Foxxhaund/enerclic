@@ -1,29 +1,36 @@
 //import { useAuthContext } from "../context/AuthContext";
-import Layout from "../comopnents/Layout/Layout";
-import NavBar from "../comopnents/NavBar/NavBar";
-import SelectDate from "../comopnents/SelectDate/SelectDate"
-import Respuesta from "../comopnents/Respuesta/Respuesta";
-import { Container, Grid } from "@mui/material";
+import Layout from "../components/Layout/Layout";
+import NavBar from "../components/NavBar/NavBar";
+import SelectDate from "../components/SelectDate/SelectDate";
+import Respuesta from "../components/Respuesta/Respuesta";
+import { Box, Button, Container, Grid } from "@mui/material";
+import { useOptionsContext } from "../context/OptionsContext";
 
+export default function Data() {
+  const { getDatos } = useOptionsContext();
 
+  return (
+    <Container
+      sx={{
+        maxWidth: "1600px",
+        margin: "0 auto",
+      }}
+    >
+      <Layout />
 
-export default function Data(){
-    return (
-    <Container maxWidth={'100%'}>
-        <Grid container>
-            <Grid item xs={12}>
-                <Layout/>
-            </Grid>
-            <Grid item xs={12}>
-                <NavBar/>
-            </Grid>
-            <Grid item xs={12}>
-                <SelectDate/>
-            </Grid>
-            <Grid item xs={12}>
-                <Respuesta/>
-            </Grid>
-        </Grid>
+      <NavBar />
+
+      <SelectDate />
+
+      <Box p={2}>
+        <Button fullWidth variant="contained" onClick={getDatos}>
+          Enviar Petición
+        </Button>
+      </Box>
+
+      <Grid item xs={12}>
+        <Respuesta />
+      </Grid>
     </Container>
-    )
+  );
 }

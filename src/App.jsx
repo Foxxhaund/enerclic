@@ -9,7 +9,6 @@ import OptionsContextProvider from "./context/OptionsContext";
 import { HOME, DATA } from "./const/routes";
 
 
-import './App.css'
 
 function App() {
   
@@ -17,6 +16,7 @@ function App() {
   return (
     <AuthContextProvider>
     <OptionsContextProvider>
+   
       <BrowserRouter>
         <CssBaseline />
         <Routes>
@@ -32,6 +32,7 @@ function App() {
             
         </Routes>
       </BrowserRouter>
+  
     </OptionsContextProvider>
     </AuthContextProvider>
   )
