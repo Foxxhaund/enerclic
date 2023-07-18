@@ -3,7 +3,6 @@ import Layout from "../components/Layout/Layout";
 import NavBar from "../components/NavBar/NavBar";
 import SelectDate from "../components/SelectDate/SelectDate";
 import Respuesta from "../components/Respuesta/Respuesta";
-import Spinner from "../components/Spinner/Spinner";
 import { Box, Button, Container, Grid } from "@mui/material";
 import { useOptionsContext } from "../context/OptionsContext";
 
