@@ -22,7 +22,6 @@ export default function OptionsContextProvider({ children }) {
   const [truck,setTruck] = useState('')
   const [datos,setDatos] = useState(null)
 
-
   //Construcción de la URL para obtener los datos de energia
   const URL = `${import.meta.env.VITE_API_URL}${selectedWid.lang}/datos/${selectedWid.category}/${selectedWid.widget}?start_date=${initDate}&end_date=${endDate}&time_trunc=${truck}`
   //Llamada a API Energía
