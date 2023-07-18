@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import logo from "../assets/logoenerclic.jpg";
 import portada from "../assets/portada.jpg";
 import Login from "../components/Login/Login";

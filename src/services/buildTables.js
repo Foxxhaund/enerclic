@@ -1,5 +1,5 @@
 
-
+//Función para extraer los colores de las leyendas
 export function buildColores(included) {
     let l = []
         included.map((i)=>{
@@ -21,6 +21,8 @@ export function energias(included){
     })
     return l
 }
+//Función que exxtrae los labels de las gráficas y la tabla
+//corresponde a los campo datetime
 export function labelsX(included){
     let l = []
         included.map((i)=>{
@@ -48,7 +50,7 @@ export function labelsX(included){
         if(l != []) return l
         else return 1
     }
-
+//Función para obtener los valores a mostrar en tabla y gráfica de valores
 export function valoresX(included){
     let l = []
     let v = []
@@ -74,6 +76,7 @@ export function valoresX(included){
         if(l != []) return l
         else return 1
     }
+//Función para obtener los porcentajes gráfica de porcentajes
 export function porcentajeX(included){
     let l = []
     let v = []
@@ -99,6 +102,7 @@ export function porcentajeX(included){
         if(l != []) return l
         else return 1
     }
+//Funcion para obtener los nombres de los valores/porcentajes
 export function nombreX(included){
     let l = []
         included.map((i)=>{

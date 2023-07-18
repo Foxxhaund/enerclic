@@ -1,6 +1,10 @@
+//Componente donde se renderizan las gráficas o 
+//mensaje si no se han obtenido datos de la llamada 
+//a la API Energia
+
 import { useOptionsContext } from "../../context/OptionsContext";
 import { Box, Grid } from "@mui/material";
-import Barras from "./Barras/Barras";
+import BarrasLineas from "./Barras/BarrasLineas";
 import {
   buildColores,
   labelsX,
@@ -24,7 +28,7 @@ export default function Graficas() {
       {VALORES != 1 ? (
         <Grid container>
           <Grid item xs={12} md={12} sx={{ border: 1, p: 1 }}>
-            <Barras
+            <BarrasLineas
               labels={LX}
               totales={VALORES}
               nombres={NOMBRES}
@@ -33,7 +37,7 @@ export default function Graficas() {
             />
           </Grid>
           <Grid item xs={12} md={12} sx={{ border: 1, p: 1 }}>
-            <Barras
+            <BarrasLineas
               labels={LX}
               totales={PORCENTAJE}
               nombres={NOMBRES}

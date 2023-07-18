@@ -1,5 +1,7 @@
 import {DEMANDA, BALANCE, GENERACION, INTERCAMBIOS, TRANSPORTE, MERCADOS} from "../const/const"
 
+
+//Función para obtener el array de widgets correspondiente a la categori seleccionada 
 export function selectWid(categoria){
     switch(categoria){
         case "balance":

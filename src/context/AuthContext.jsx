@@ -13,7 +13,7 @@ export default function AuthContextProvider({ children }) {
     () => JSON.parse(localStorage.getItem(ENERCLIC)) ?? null
   );
   const [errorMessage, setErrorMessage] = useState(null);
-
+  //función login con la que optenemos el "token" para la autorización a consultar datos
   async function login(e, u) {
     e.preventDefault();
     const response = await fetch('https://fakestoreapi.com/auth/login', {
@@ -30,7 +30,7 @@ export default function AuthContextProvider({ children }) {
         setErrorMessage("Las credenciales no son correctas");
     }
   }
-
+  //Función logout
   function logout() {
     localStorage.removeItem(ENERCLIC);
     setUser(null);

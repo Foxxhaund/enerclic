@@ -1,3 +1,10 @@
+//Este componente esta dedicado a la optencion de los valores "lang", "category" y "widget"
+//para la construccion de la llamada a la API de energía.
+//Los elementos "Select" se construyen usando unos arrays declarados en el archivo "const.js".
+//El elemento Select correspondiente a los "widgets" se construye segun la categoría seleccionada,
+//para ello se han creado diferentes arrays que se usan según la elección de categoria usando la 
+//función selectWid declarada en el archivo "selectWid.js"
+
 import { useEffect, useState } from "react";
 import {
   InputLabel,

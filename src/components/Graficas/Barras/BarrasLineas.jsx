@@ -1,3 +1,6 @@
+//Construcción de las gráficas de valores y porcentajes con
+//sus selectores para gráficas de lineas o barras
+
 import { useMemo, useState } from "react"
 import { Bar, Line } from "react-chartjs-2";
 import { Box } from "@mui/material";

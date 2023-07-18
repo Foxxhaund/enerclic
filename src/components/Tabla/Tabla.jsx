@@ -24,11 +24,10 @@ function CustomToolbar() {
 export default function Tabla() {
   const { datos } = useOptionsContext();
   const { included } = datos;
- 
   const NOMBRES = nombreX(included);
   const VALORES = valoresX(included);
   const LX = labelsX(included);
-
+//Construccion de la Cabecera de la tabla
   let cols = [
     {
       field: "Nombre",
@@ -45,7 +44,7 @@ export default function Tabla() {
       headerAlign: "center",
     });
   });
-  console.log(cols, "cols en tabla");
+//Relleno de la tabla con los valores extraidos de la API
   let rows = [];
   VALORES.map((V, index) => {
     let obj = { id: index, Nombre: NOMBRES[index] };

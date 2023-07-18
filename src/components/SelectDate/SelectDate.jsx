@@ -1,3 +1,6 @@
+//Este componente esta dedicado a la optencion de los valores "start_date", "end_date" y "time_truck"
+//para la construccion de la llamada a la API de energía.
+
 import { InputLabel, MenuItem, FormControl, Select, Box } from "@mui/material";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -5,7 +8,6 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState, useEffect } from "react";
 import { useOptionsContext } from "../../context/OptionsContext";
 import moment from "moment";
-
 export default function SelectDate() {
   const { SetInitDate, SetEndDate, setTruck } = useOptionsContext();
   const [iDate, setIDate] = useState(moment());

@@ -1,3 +1,5 @@
+//Declaración de rutas privadas, sólo se puede acceder si existe token
+
 import { useAuthContext } from "../context/AuthContext";
 import { Navigate, Outlet } from "react-router-dom";
 import { HOME } from "../const/routes";

@@ -1,3 +1,5 @@
+//Declaración de rutas públicas
+
 import { useAuthContext } from "../context/AuthContext";
 import { Navigate, Outlet } from "react-router-dom";
 import { DATA } from "../const/routes";

@@ -1,5 +1,8 @@
+//Array para la construccion del elemento Select para el idioma
 const LANG = ["es","en"]
+//Array para la construccion del elemento Select para la categoría
 const CATEGORY = ["balance","demanda","generacion","intercambios","transporte","mercados"]
+//Conjunto de arrays para la construccion del elemento Select de widgets
 const BALANCE = ["balance-electrico"]
 const DEMANDA = ["evolucion","variacion-componentes","variacion-componentes-movil","ire-general","ire-general-anual","ire-general-movil","ire-industria",
         "ire-industria-anual","ire-industria-movil","ire-servicios","ire-servicios-anual","ire-servicios-movil","ire-otras","ire-otras-anual","ire-otras-movil",

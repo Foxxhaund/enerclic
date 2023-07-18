@@ -1,3 +1,4 @@
+//Componente que muestra el icono de ENERCLIC y botón de LOGOUT
 import { Grid, Button, Box } from "@mui/material";
 import { useAuthContext } from "../../context/AuthContext";
 import { useOptionsContext } from "../../context/OptionsContext"; 
